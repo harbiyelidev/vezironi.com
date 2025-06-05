@@ -1,10 +1,33 @@
+'use client';
+
 import { useCurrentSong } from "@/hooks/getCurrentSong";
 import { useLastSong } from "@/hooks/getLastSong";
+
+import Calendar from "react-activity-calendar";
 
 import type { Token } from "@/types/token";
 import type { CurrentSong, LastSong } from "@/types/spotify";
 
-function Activity({ access_token }: Token) {
+interface Activity {
+  date: string
+  count: number
+  level: 0 | 1 | 2 | 3 | 4
+}
+
+interface ApiResponse {
+  total: {
+    [year: number]: number
+    [year: string]: number
+  }
+  contributions: Array<Activity>
+}
+
+
+interface ApiErrorResponse {
+  error: string
+}
+
+async function Activity({ access_token }: Token) {
     const { currentData, isLoading } = useCurrentSong(access_token);
     const { lastData } = useLastSong(access_token);
 
@@ -14,6 +37,13 @@ function Activity({ access_token }: Token) {
     if (!access_token) return <a href="https://api.vezironi.com/v1/login">Please login</a>;
     if (isLoading) return <div>Loading song data...</div>;
 
+    const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${import.meta.env.VITE_GITHUB_USERNAME}?y=last`)
+    const data: ApiResponse | ApiErrorResponse = await response.json()
+
+    if ('error' in data) {
+        return <div>Error fetching contributions: {data.error}</div>;
+    }
+
     const progressPercentage = () => {
         if (currentSong && currentSong.item) {
             return Math.min((currentSong.progress_ms / currentSong.item.duration_ms) * 100, 100);
@@ -21,10 +51,21 @@ function Activity({ access_token }: Token) {
         return 0;
     };
 
+    const selectLastNDays = (contributions: Activity[], days: number) => {
+        const today = new Date()
+        const startDate = new Date(today)
+        startDate.setDate(today.getDate() - days)
+
+        return contributions.filter((activity) => {
+            const activityDate = new Date(activity.date)
+            return activityDate >= startDate && activityDate <= today
+        })
+    }
+
     return (
         <div className="grid w-full grid-cols-1 gap-4 max-md:w-full">
             <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md w-full">
-                <div className="p-6 pt-0 mt-5  w-full">
+                <div className="p-6 pt-0 mt-5 w-full">
                     {
                         currentSong && currentSong.item ? (
                             <div className="flex flex-row items-center w-full">
@@ -79,6 +120,36 @@ function Activity({ access_token }: Token) {
                         )
                     }
                 </div>
+            </div>
+            <div className="[&_.react-activity-calendar\\_\\_legend-month]:text-foreground/80 hidden w-fit sm:block">
+                <Calendar
+                    data={selectLastNDays(data.contributions, 133)}
+                    theme={{
+                        dark: ['#0d0c0d', '#E9D3B6'],
+                    }}
+                    colorScheme="dark"
+                    blockSize={20}
+                    blockMargin={6}
+                    blockRadius={0}
+                    maxLevel={4}
+                    hideTotalCount
+                    hideColorLegend
+                />
+            </div>
+            <div className="[&_.react-activity-calendar\\_\\_legend-month]:text-foreground/80 w-fit sm:hidden">
+                <Calendar
+                    data={selectLastNDays(data.contributions, 60)}
+                    theme={{
+                        dark: ['#0d0c0d', '#E9D3B6'],
+                    }}
+                    colorScheme="dark"
+                    blockSize={20}
+                    blockMargin={6}
+                    blockRadius={0}
+                    maxLevel={4}
+                    hideTotalCount
+                    hideColorLegend
+                />
             </div>
         </div>
     );
