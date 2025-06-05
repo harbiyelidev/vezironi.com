@@ -2,13 +2,13 @@
 import axios from "axios";
 
 export default async function SpotifyAPI() {
-  const expiredTime = localStorage.getItem('expiredTime');
+  const expires_in = localStorage.getItem('expires_in');
   const currentTime = Date.now();
 
-  if (expiredTime && currentTime < parseInt(expiredTime)) {
-    const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-      return accessToken;
+  if (expires_in && currentTime < parseInt(expires_in)) {
+    const access_token = localStorage.getItem('access_token');
+    if (access_token) {
+      return access_token;
     }
   }
 
@@ -16,10 +16,10 @@ export default async function SpotifyAPI() {
     const response = await axios.get('https://api.vezironi.com/v1/refresh', {});
 
     if (response.status == 200) {
-      const { access_token, expire_in } = response.data;
+      const { access_token, expires_in } = response.data;
 
-      localStorage.setItem('accessToken', access_token);
-      localStorage.setItem('expiredTime', (Date.now() + expire_in * 1000).toString());
+      localStorage.setItem('access_token', access_token);
+      localStorage.setItem('expires_in', (Date.now() + expires_in * 1000).toString());
 
       return response.data;
     };
