@@ -5,7 +5,6 @@ import { useGithubCalendar } from "@/hooks/useGithubCalendar";
 
 import Calendar from "react-activity-calendar";
 
-
 import type { Token } from "@/types/token";
 import type { CurrentSong, LastSong } from "@/types/spotify";
 
@@ -31,6 +30,8 @@ function Activity({ access_token }: Token) {
     const calendarData: ApiResponse = githubCLData ? githubCLData : { total: {}, contributions: [] };
     const currentSong: CurrentSong | null = currentData ? currentData : null;
     const lastSong: LastSong | null = lastData ? lastData.items[0].track : null;
+
+    print(calendarData);
 
     if (!access_token) return <a href="https://api.vezironi.com/v1/login">Please login</a>;
     if (isLoading) return <div>Loading song data...</div>;
