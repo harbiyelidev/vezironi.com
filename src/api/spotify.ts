@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default async function SpotifyAPI() {
   try {
-    const response = await axios.get('https://api.vezironi.com/api/refresh', {});
+    const response = await axios.get('https://api.vezironi.com/v1/refresh', {});
 
     console.log('Token refreshed successfully:', response.data);
 
