@@ -112,35 +112,39 @@ function Activity({ access_token }: Token) {
                 </div>
             </div>
             <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md w-full">
-                <div className="text-[hsl(var(--text-foreground))] hidden w-fit sm:block">
-                    <Calendar
-                        data={selectLastNDays(calendarData.contributions, 133)}
-                        theme={{
-                            dark: ['#0d0c0d', '#b2a7fb'],
-                        }}
-                        colorScheme="dark"
-                        blockSize={12}
-                        blockMargin={6}
-                        blockRadius={3}
-                        maxLevel={4}
-                        hideTotalCount
-                        hideColorLegend
-                    />
-                </div>
-                <div className="text-[hsl(var(--text-foreground))] w-fit sm:hidden">
-                    <Calendar
-                        data={selectLastNDays(calendarData.contributions, 60)}
-                        theme={{
-                            dark: ['#0d0c0d', '#b2a7fb'],
-                        }}
-                        colorScheme="dark"
-                        blockSize={12}
-                        blockMargin={6}
-                        blockRadius={3}
-                        maxLevel={4}
-                        hideTotalCount
-                        hideColorLegend
-                    />
+                <div className="p-6 pt-0 mt-5 w-full">
+                    <div className="text-[hsl(var(--text-foreground))] hidden w-fit sm:block">
+                        <Calendar
+                            data={selectLastNDays(calendarData.contributions, 133)}
+                            theme={{
+                                dark: ['#0d0c0d', '#b2a7fb'],
+                            }}
+                            colorScheme="dark"
+                            blockSize={12}
+                            blockMargin={6}
+                            blockRadius={3}
+                            maxLevel={4}
+                            hideTotalCount
+                            hideColorLegend
+                            hideMonthLabels
+                        />
+                    </div>
+                    <div className="text-[hsl(var(--text-foreground))] w-fit sm:hidden">
+                        <Calendar
+                            data={selectLastNDays(calendarData.contributions, 60)}
+                            theme={{
+                                dark: ['#0d0c0d', '#b2a7fb'],
+                            }}
+                            colorScheme="dark"
+                            blockSize={12}
+                            blockMargin={6}
+                            blockRadius={3}
+                            maxLevel={4}
+                            hideTotalCount
+                            hideColorLegend
+                            hideMonthLabels
+                        />
+                    </div>
                 </div>
             </div>
         </div>
