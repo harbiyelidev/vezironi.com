@@ -8,7 +8,10 @@ export default async function SpotifyAPI() {
   if (expires_in && currentTime < parseInt(expires_in)) {
     const access_token = localStorage.getItem('access_token');
     if (access_token) {
-      return access_token;
+      return {
+        access_token: access_token,
+        status: 200
+      };
     }
   }
 
