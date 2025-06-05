@@ -31,7 +31,6 @@ function Activity({ access_token }: Token) {
     const currentSong: CurrentSong | null = currentData ? currentData : null;
     const lastSong: LastSong | null = lastData ? lastData.items[0].track : null;
 
-    print(calendarData);
 
     if (!access_token) return <a href="https://api.vezironi.com/v1/login">Please login</a>;
     if (isLoading) return <div>Loading song data...</div>;
@@ -52,7 +51,9 @@ function Activity({ access_token }: Token) {
             const activityDate = new Date(activity.date)
             return activityDate >= startDate && activityDate <= today
         })
-    }
+    };
+
+    console.log(calendarData);
 
     return (
         <div className="grid w-full grid-cols-1 gap-4 max-md:w-full">
