@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: 300 4% 5%;
+  --bg-secondary: 240 2% 12%;
+  --bg-card: 240 3% 6%;
+  --text-primary: 248 91% 82%;
+  --text-foreground: 0 0% 98%;
+  --border-primary: 240 2% 12%;
+}
+
+@layer utilities {
+  @font-face {
+    font-family: "Geist-Black";
+    src: url("/fonts/Geist-Black.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Geist-Bold";
+    src: url("/fonts/Geist-Bold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Geist-Medium";
+    src: url("/fonts/Geist-Medium.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Geist-Regular";
+    src: url("/fonts/Geist-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Geist-Semibold";
+    src: url("/fonts/Geist-SemiBold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Geist-Thin";
+    src: url("/fonts/Geist-Thin.ttf") format("truetype");
+  }
+    @font-face {
+    font-family: "Geist-Light";
+    src: url("/fonts/Geist-Light.ttf") format("truetype");
+  }
+}
+
+* {
+  border-color: hsl(var(--border-primary));
+}
