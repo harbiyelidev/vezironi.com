@@ -1,10 +1,10 @@
 'use client';
 import { useCurrentSong } from "@/hooks/getCurrentSong";
 import { useLastSong } from "@/hooks/getLastSong";
+import { useGithubCalendar } from "@/hooks/useGithubCalendar";
 
 import Calendar from "react-activity-calendar";
 
-import GithubCalendar from "@/api/github-calendar";
 
 import type { Token } from "@/types/token";
 import type { CurrentSong, LastSong } from "@/types/spotify";
@@ -23,8 +23,8 @@ interface ApiResponse {
   contributions: Array<Activity>
 }
 
-async function Activity({ access_token }: Token) {
-    const { githubCLData } = await GithubCalendar();
+function Activity({ access_token }: Token) {
+    const { githubCLData } = useGithubCalendar();
     const { currentData, isLoading } = useCurrentSong(access_token);
     const { lastData } = useLastSong(access_token);
 
