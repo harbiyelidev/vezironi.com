@@ -1,7 +1,6 @@
 import { useCurrentSong } from "@/hooks/getCurrentSong";
 import { useLastSong } from "@/hooks/getLastSong";
 
-
 import type { Token } from "@/types/token";
 import type { CurrentSong, LastSong } from "@/types/spotify";
 
@@ -12,7 +11,7 @@ function Activity({ access_token }: Token) {
     const currentSong: CurrentSong | null = currentData ? currentData : null;
     const lastSong: LastSong | null = lastData ? lastData.items[0].track : null;
 
-    if (!access_token) return <div>Please login</div>;
+    if (!access_token) return <a href="https://api.vezironi.com/api/login">Please login</a>;
     if (isLoading) return <div>Loading song data...</div>;
 
     const progressPercentage = () => {
