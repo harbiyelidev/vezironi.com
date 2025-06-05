@@ -119,9 +119,9 @@ function Activity({ access_token }: Token) {
                             dark: ['#0d0c0d', '#b2a7fb'],
                         }}
                         colorScheme="dark"
-                        blockSize={24}
+                        blockSize={12}
                         blockMargin={6}
-                        blockRadius={0}
+                        blockRadius={3}
                         maxLevel={4}
                         hideTotalCount
                         hideColorLegend
@@ -134,9 +134,9 @@ function Activity({ access_token }: Token) {
                             dark: ['#0d0c0d', '#b2a7fb'],
                         }}
                         colorScheme="dark"
-                        blockSize={24}
+                        blockSize={12}
                         blockMargin={6}
-                        blockRadius={0}
+                        blockRadius={3}
                         maxLevel={4}
                         hideTotalCount
                         hideColorLegend
