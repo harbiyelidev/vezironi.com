@@ -1,9 +1,9 @@
-'use client';
-
 import { useCurrentSong } from "@/hooks/getCurrentSong";
 import { useLastSong } from "@/hooks/getLastSong";
 
 import Calendar from "react-activity-calendar";
+
+import GithubCalendar from "@/api/github-calendar";
 
 import type { Token } from "@/types/token";
 import type { CurrentSong, LastSong } from "@/types/spotify";
@@ -22,27 +22,17 @@ interface ApiResponse {
   contributions: Array<Activity>
 }
 
-
-interface ApiErrorResponse {
-  error: string
-}
-
 async function Activity({ access_token }: Token) {
+    const { githubCLData } = await GithubCalendar();
     const { currentData, isLoading } = useCurrentSong(access_token);
     const { lastData } = useLastSong(access_token);
 
+    const calendarData: ApiResponse = githubCLData ? githubCLData : { total: {}, contributions: [] };
     const currentSong: CurrentSong | null = currentData ? currentData : null;
     const lastSong: LastSong | null = lastData ? lastData.items[0].track : null;
 
     if (!access_token) return <a href="https://api.vezironi.com/v1/login">Please login</a>;
     if (isLoading) return <div>Loading song data...</div>;
-
-    const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${import.meta.env.VITE_GITHUB_USERNAME}?y=last`)
-    const data: ApiResponse | ApiErrorResponse = await response.json()
-
-    if ('error' in data) {
-        return <div>Error fetching contributions: {data.error}</div>;
-    }
 
     const progressPercentage = () => {
         if (currentSong && currentSong.item) {
@@ -123,7 +113,7 @@ async function Activity({ access_token }: Token) {
             </div>
             <div className="[&_.react-activity-calendar\\_\\_legend-month]:text-foreground/80 hidden w-fit sm:block">
                 <Calendar
-                    data={selectLastNDays(data.contributions, 133)}
+                    data={selectLastNDays(calendarData.contributions, 133)}
                     theme={{
                         dark: ['#0d0c0d', '#E9D3B6'],
                     }}
@@ -138,7 +128,7 @@ async function Activity({ access_token }: Token) {
             </div>
             <div className="[&_.react-activity-calendar\\_\\_legend-month]:text-foreground/80 w-fit sm:hidden">
                 <Calendar
-                    data={selectLastNDays(data.contributions, 60)}
+                    data={selectLastNDays(calendarData.contributions, 60)}
                     theme={{
                         dark: ['#0d0c0d', '#E9D3B6'],
                     }}
