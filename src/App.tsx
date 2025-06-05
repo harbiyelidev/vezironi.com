@@ -13,10 +13,14 @@ function App() {
 
   useEffect(() => {
     const fetchToken = async () => {
-      const access_token = await SpotifyAPI();
+      const data = await SpotifyAPI();
 
-      if (access_token) {
+      if (data.status === 200) {
+        const { access_token } = data;
+
         setToken(access_token);
+      } else {
+        console.error('Failed to fetch access token:', data);
       }
     };
     fetchToken();
