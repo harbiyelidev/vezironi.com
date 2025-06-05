@@ -7,7 +7,7 @@ const fetcher = async (url: string) => {
 };
 
 export function useGithubCalendar() {
-    const url = 'https://github-contributions-api.jogruber.de/v4/harbiyelidev?y=all';
+    const url = 'https://github-contributions-api.jogruber.de/v4/harbiyelidev?y=last';
 
     const { data, error } = useSWR(
         url,

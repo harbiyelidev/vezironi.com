@@ -115,7 +115,7 @@ function Activity({ access_token }: Token) {
                 <div className="p-6 pt-0 mt-5 w-full">
                     <div className="text-[hsl(var(--text-foreground))] hidden w-fit sm:block">
                         <Calendar
-                            data={selectLastNDays(calendarData.contributions, 365)}
+                            data={selectLastNDays(calendarData.contributions, 133)}
                             theme={{
                                 dark: ['#0d0c0d', '#b2a7fb'],
                             }}
@@ -146,6 +146,7 @@ function Activity({ access_token }: Token) {
                         />
                     </div>
                 </div>
+
             </div>
         </div>
     );
