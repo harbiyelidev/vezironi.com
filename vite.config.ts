@@ -18,9 +18,4 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
-  server: {
-    proxy: {
-      '/api': 'https://api.vezironi.com'
-    }
-  }
 })

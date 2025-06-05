@@ -3,14 +3,14 @@ import axios from "axios";
 
 export default async function SpotifyAPI() {
   try {
-    const response = await axios.get('/api/refresh', {
+    const response = await axios.get('https://api.vezironi.com/api/refresh', {
       withCredentials: true,
     });
 
     console.log('Response from refresh:', response.data);
 
     if (!response.data || !response.data.access_token) {
-      const response = await axios.get('/api/login', {
+      const response = await axios.get('https://api.vezironi.com/api/login', {
         withCredentials: true,
       });
 
