@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import SpotifyAPI from '@/api/spotify';
 import SWR from '@/api/swr';
 
