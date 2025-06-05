@@ -1,3 +1,4 @@
+'use client';
 import { useCurrentSong } from "@/hooks/getCurrentSong";
 import { useLastSong } from "@/hooks/getLastSong";
 
