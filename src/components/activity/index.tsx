@@ -31,7 +31,6 @@ function Activity({ access_token }: Token) {
     const currentSong: CurrentSong | null = currentData ? currentData : null;
     const lastSong: LastSong | null = lastData ? lastData.items[0].track : null;
 
-
     if (!access_token) return <a href="https://api.vezironi.com/v1/login">Please login</a>;
     if (isLoading) return <div>Loading song data...</div>;
 
@@ -52,8 +51,6 @@ function Activity({ access_token }: Token) {
             return activityDate >= startDate && activityDate <= today
         })
     };
-
-    console.log(calendarData);
 
     return (
         <div className="grid w-full grid-cols-1 gap-4 max-md:w-full">
@@ -114,35 +111,37 @@ function Activity({ access_token }: Token) {
                     }
                 </div>
             </div>
-            <div className="[&_.react-activity-calendar\\_\\_legend-month]:text-foreground/80 hidden w-fit sm:block">
-                <Calendar
-                    data={selectLastNDays(calendarData.contributions, 133)}
-                    theme={{
-                        dark: ['#0d0c0d', '#E9D3B6'],
-                    }}
-                    colorScheme="dark"
-                    blockSize={20}
-                    blockMargin={6}
-                    blockRadius={0}
-                    maxLevel={4}
-                    hideTotalCount
-                    hideColorLegend
-                />
-            </div>
-            <div className="[&_.react-activity-calendar\\_\\_legend-month]:text-foreground/80 w-fit sm:hidden">
-                <Calendar
-                    data={selectLastNDays(calendarData.contributions, 60)}
-                    theme={{
-                        dark: ['#0d0c0d', '#E9D3B6'],
-                    }}
-                    colorScheme="dark"
-                    blockSize={20}
-                    blockMargin={6}
-                    blockRadius={0}
-                    maxLevel={4}
-                    hideTotalCount
-                    hideColorLegend
-                />
+            <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md w-full">
+                <div className="text-[hsl(var(--text-foreground))] hidden w-fit sm:block">
+                    <Calendar
+                        data={selectLastNDays(calendarData.contributions, 133)}
+                        theme={{
+                            dark: ['#0d0c0d', '#b2a7fb'],
+                        }}
+                        colorScheme="dark"
+                        blockSize={24}
+                        blockMargin={6}
+                        blockRadius={0}
+                        maxLevel={4}
+                        hideTotalCount
+                        hideColorLegend
+                    />
+                </div>
+                <div className="text-[hsl(var(--text-foreground))] w-fit sm:hidden">
+                    <Calendar
+                        data={selectLastNDays(calendarData.contributions, 60)}
+                        theme={{
+                            dark: ['#0d0c0d', '#b2a7fb'],
+                        }}
+                        colorScheme="dark"
+                        blockSize={24}
+                        blockMargin={6}
+                        blockRadius={0}
+                        maxLevel={4}
+                        hideTotalCount
+                        hideColorLegend
+                    />
+                </div>
             </div>
         </div>
     );
