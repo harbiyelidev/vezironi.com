@@ -1,7 +1,7 @@
 'use client';
 import { useCurrentSong } from "@/hooks/getCurrentSong";
 import { useLastSong } from "@/hooks/getLastSong";
-import { useGithubCalendar } from "@/hooks/useGithubCalendar";
+// import { useGithubCalendar } from "@/hooks/useGithubCalendar";
 
 // import Calendar from "react-activity-calendar";
 
@@ -23,7 +23,7 @@ interface Activity {
 // }
 
 function Activity({ access_token }: Token) {
-    const { githubCLData } = useGithubCalendar();
+    // const { githubCLData } = useGithubCalendar();
     const { currentData, isLoading } = useCurrentSong(access_token);
     const { lastData } = useLastSong(access_token);
 
