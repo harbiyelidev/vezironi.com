@@ -3,7 +3,7 @@ import { useCurrentSong } from "@/hooks/getCurrentSong";
 import { useLastSong } from "@/hooks/getLastSong";
 import { useGithubCalendar } from "@/hooks/useGithubCalendar";
 
-import Calendar from "react-activity-calendar";
+// import Calendar from "react-activity-calendar";
 
 import type { Token } from "@/types/token";
 import type { CurrentSong, LastSong } from "@/types/spotify";
@@ -14,20 +14,20 @@ interface Activity {
   level: 0 | 1 | 2 | 3 | 4
 }
 
-interface ApiResponse {
-  total: {
-    [year: number]: number
-    [year: string]: number
-  }
-  contributions: Array<Activity>
-}
+// interface ApiResponse {
+//   total: {
+//     [year: number]: number
+//     [year: string]: number
+//   }
+//   contributions: Array<Activity>
+// }
 
 function Activity({ access_token }: Token) {
     const { githubCLData } = useGithubCalendar();
     const { currentData, isLoading } = useCurrentSong(access_token);
     const { lastData } = useLastSong(access_token);
 
-    const calendarData: ApiResponse = githubCLData ? githubCLData : { total: {}, contributions: [] };
+    // const calendarData: ApiResponse = githubCLData ? githubCLData : { total: {}, contributions: [] };
     const currentSong: CurrentSong | null = currentData ? currentData : null;
     const lastSong: LastSong | null = lastData ? lastData.items[0].track : null;
 
@@ -41,16 +41,16 @@ function Activity({ access_token }: Token) {
         return 0;
     };
 
-    const selectLastNDays = (contributions: Activity[], days: number) => {
-        const today = new Date()
-        const startDate = new Date(today)
-        startDate.setDate(today.getDate() - days)
+    // const selectLastNDays = (contributions: Activity[], days: number) => {
+    //     const today = new Date()
+    //     const startDate = new Date(today)
+    //     startDate.setDate(today.getDate() - days)
 
-        return contributions.filter((activity) => {
-            const activityDate = new Date(activity.date)
-            return activityDate >= startDate && activityDate <= today
-        })
-    };
+    //     return contributions.filter((activity) => {
+    //         const activityDate = new Date(activity.date)
+    //         return activityDate >= startDate && activityDate <= today
+    //     })
+    // };
 
     return (
         <div className="grid w-full grid-cols-1 gap-4 max-md:w-full">
@@ -111,7 +111,7 @@ function Activity({ access_token }: Token) {
                     }
                 </div>
             </div>
-            <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md w-full">
+            {/* <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md w-full">
                 <div className="p-6 pt-0 mt-5 w-full">
                     <div className="text-[hsl(var(--text-foreground))] hidden w-fit sm:block">
                         <Calendar
@@ -146,8 +146,7 @@ function Activity({ access_token }: Token) {
                         />
                     </div>
                 </div>
-
-            </div>
+            </div> */}
         </div>
     );
 }
