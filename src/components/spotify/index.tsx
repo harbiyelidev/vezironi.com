@@ -98,7 +98,7 @@ function Spotify({ token }: { token: string | null }) {
                                                         <a href={artist.external_urls.spotify} target="_blank" rel="noopener noreferrer" className="hover:underline">
                                                             {artist.name}
                                                         </a>
-                                                        {index < lastSong.artists.length - 1 ? ', ' : ''}
+                                                        {lastSong && index < lastSong.artists.length - 1 ? ', ' : ''}
                                                     </span>
                                                 ))}
                                             </p>
