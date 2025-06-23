@@ -39,7 +39,7 @@ function Spotify({ token }: { token: string | null }) {
     const currentSong = data as CurrentSong;
     let lastSong: LastSong | undefined;
 
-    if (!currentSong) {
+    if (!currentSong || !currentSong.is_playing || !currentSong.item) {
         lastSong = data.items[0].track as LastSong;
 
         console.log("No current song, using last song:", lastSong);
