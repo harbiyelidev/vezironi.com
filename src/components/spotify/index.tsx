@@ -9,24 +9,24 @@ function Spotify({ token }: { token: string | null }) {
 
     const { data, error, isLoading } = useSpotifyService(token);
 
-    console.log(isLoading);
-
-    return <div className="grid w-full grid-cols-1 gap-4 max-md:w-full">
-        <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md w-full">
-            <div className="p-6 pt-0 mt-5 w-full">
-                <div className="flex flex-row items-center w-full">
-                    <div className="min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
-                    <div className="ml-4 w-full">
-                        <div className="flex flex-col gap-y-1.5 mb-1">
-                            <div className="w-36 h-8 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
-                            <div className="w-36 h-5 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
+    if (isLoading) {
+        return <div className="grid w-full grid-cols-1 gap-4 max-md:w-full">
+            <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md w-full">
+                <div className="p-6 pt-0 mt-5 w-full">
+                    <div className="flex flex-row items-center w-full">
+                        <div className="min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
+                        <div className="ml-4 w-full">
+                            <div className="flex flex-col gap-y-1.5 mb-1">
+                                <div className="w-36 h-8 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
+                                <div className="w-36 h-5 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
+                            </div>
+                            <div className="w-full h-1.5 bg-[hsl(var(--bg-secondary))] rounded-full relative"></div>
                         </div>
-                        <div className="w-full h-1.5 bg-[hsl(var(--bg-secondary))] rounded-full relative"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>;
+        </div>;
+    }
 
     if (error) {
         return <div className="text-center">Error loading song data</div>;
