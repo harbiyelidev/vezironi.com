@@ -36,7 +36,7 @@ function Versions({ data }: { data: Record<string, ScriptVersion> }) {
                     ))}
                     <div className="absolute inset-x-0 bottom-0 z-50 h-52 w-full bg-gradient-to-b from-transparent to-[#151515]"></div>
                     <div className="absolute inset-x-0 bottom-5 z-50 flex items-center justify-center">
-                        <a href="/versions" className="inline-flex items-center justify-center whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary hover:bg-primary/90 h-10 px-4 py-2 w-fit gap-2">
+                        <a href="/versions" className="inline-flex items-center justify-center whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--text-primary))] hover:bg-[hsl(var(--text-primary))/90] h-10 px-4 py-2 w-fit gap-2">
                             <p className="text-sm font-['Geist-Medium'] text-[hsl(var(--text-foreground))]">Check all versions</p>
                         </a>
                     </div>
