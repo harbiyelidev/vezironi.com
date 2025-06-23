@@ -18,7 +18,7 @@ function Spotify({ token }: { token: string | null }) {
                     <div className="min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
                     <div className="ml-4 w-full">
                         <div className="flex flex-col gap-y-1.5 mb-1">
-                            <div className="w-36 h-12 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
+                            <div className="w-20 h-12 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
                             <div className="w-36 h-5 animate-pulse bg-[hsl(var(--bg-secondary))] rounded-md"></div>
                         </div>
                         <div className="w-full h-1.5 bg-[hsl(var(--bg-secondary))] rounded-full relative"></div>
