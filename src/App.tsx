@@ -27,22 +27,8 @@ const App = () => {
 
     }, []);
 
-    return <Loading />;
-
-    if (spotifyLoading) {
+    if (profileLoading || spotifyLoading || profileError || spotifyData.status !== 200 || !spotifyData.access_token) {
         return <Loading />;
-    };
-
-    if (profileError && spotifyData.status !== 200) {
-        return <div>Error loading profile data</div>;
-    };
-
-    if (profileLoading) {
-        return <Loading />;
-    };
-
-    if (profileError) {
-        return <div>Error loading profile data</div>;
     };
 
     return (
