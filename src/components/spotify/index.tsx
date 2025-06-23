@@ -15,12 +15,12 @@ function Spotify({ token }: { token: string | null }) {
         <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md w-full">
             <div className="p-6 pt-0 mt-5 w-full">
                 <div className="flex flex-row items-center w-full">
-                    <div className="w-24 h-7 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
+                    <div className="w-24 h-24 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
                     <div className="ml-4 w-full">
                         <div className="flex flex-col mb-1">
-                            <div className="w-24 h-24 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
-                            <div className="rounded-full text-xs font-['Geist-Semibold'] mt-auto flex w-fit items-center justify-center gap-1">
-                                <div className="w-24 h-3.5 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
+                            <div className="w-36 h-12 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
+                            <div className="rounded-full mt-auto flex w-fit items-center justify-center gap-1">
+                                <div className="w-36 h-5 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
                             </div>
                         </div>
                         <div className="w-full h-1.5 bg-[hsl(var(--bg-secondary))] rounded-full relative"></div>
