@@ -34,6 +34,8 @@ const App = () => {
         return <Loading />;
     };
 
+    console.log(versionsData);
+
     return (
         <>
             <div className="relative overflow-hidden">
