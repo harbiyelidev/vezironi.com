@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import mdx from "vite-plugin-mdx";
+import mdx from '@mdx-js/rollup';
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path'
