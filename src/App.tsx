@@ -9,6 +9,7 @@ import Profile from './components/profile/index.tsx';
 import Experience from './components/experience/index.tsx';
 import Spotify from './components/spotify/index.tsx';
 import Activity from './components/activity/index.tsx';
+import Versions from './components/versions/index.tsx';
 
 import { useEffect, useState } from 'react';
 
@@ -33,8 +34,6 @@ const App = () => {
         return <Loading />;
     };
 
-    console.log(versionsData)
-
     return (
         <>
             <div className="relative overflow-hidden">
@@ -47,7 +46,9 @@ const App = () => {
                             <Spotify token={spotifyData.access_token ?? null} />
                             <Activity profile={profileData} />
                         </div>
-                        <div className='grid gap-4 grid-cols-1 h-fit max-w-[65vh]'></div>
+                        <div className='grid gap-4 grid-cols-1 h-fit max-w-[65vh]'>
+                            <Versions data={versionsData.versions} />
+                        </div>
                     </div>
                 </div>
             </div>
