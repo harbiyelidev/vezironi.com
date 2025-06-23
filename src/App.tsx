@@ -1,6 +1,7 @@
 // API
 import DiscordProfile from './api/discordProfile.ts'
 import SpotifyAPI from './api/spotify.ts';
+import ScriptVersionsAPI from './api/scriptVersions.ts';
 
 // Components
 import Loading from './components/loading/index.tsx';
@@ -15,6 +16,7 @@ const App = () => {
     const { profileData, profileLoading, profileError } = DiscordProfile();
     const [spotifyData, setSpotifyData] = useState<{ access_token?: string; status?: number }>({});
     const [spotifyLoading, setSpotifyLoading] = useState(true);
+    const { versionsData, versionsLoading, versionsError } = ScriptVersionsAPI();
 
     useEffect(() => {
 
@@ -27,9 +29,11 @@ const App = () => {
 
     }, []);
 
-    if (profileLoading || spotifyLoading || profileError || spotifyData.status !== 200 || !spotifyData.access_token) {
+    if (profileLoading || spotifyLoading || profileError || spotifyData.status !== 200 || !spotifyData.access_token || versionsLoading || versionsError) {
         return <Loading />;
     };
+
+    console.log(versionsData)
 
     return (
         <>
