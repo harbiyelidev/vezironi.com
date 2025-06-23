@@ -15,9 +15,9 @@ function Spotify({ token }: { token: string | null }) {
         <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md w-full">
             <div className="p-6 pt-0 mt-5 w-full">
                 <div className="flex flex-row items-center w-full">
-                    <div className="w-24 h-24 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
+                    <div className="min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
                     <div className="ml-4 w-full">
-                        <div className="flex flex-col mb-1">
+                        <div className="flex flex-col gap-y-1.5">
                             <div className="w-36 h-12 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
                             <div className="rounded-full mt-auto flex w-fit items-center justify-center gap-1">
                                 <div className="w-36 h-5 animate-pulse bg-[hsl(var(--bg-secondary))]"></div>
@@ -63,7 +63,7 @@ function Spotify({ token }: { token: string | null }) {
                     {
                         isCurrentSong(data) ? (
                             <div className="flex flex-row items-center w-full">
-                                <img src={`${currentSong?.item.album.images[0].url}`} alt="spotify-song-image" width={96} height={96} loading='eager' decoding='async' className='rounded-md' />
+                                <img src={`${currentSong?.item.album.images[0].url}`} alt="spotify-song-image" width={96} height={96} loading='eager' decoding='async' className='min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 rounded-md' />
                                 <div className="ml-4 w-full">
                                     <div className="flex flex-col mb-1">
                                         <h1 className="text-2xl font-['Geist-Bold'] text-[hsl(var(--text-primary))]">{currentSong?.item.name}</h1>
@@ -87,7 +87,7 @@ function Spotify({ token }: { token: string | null }) {
                             </div>
                         ) : (
                             <div className="flex flex-row items-center w-full">
-                                <img src={`${lastSong?.album.images[0].url}`} alt="spotify-song-image" width={96} height={96} loading='eager' decoding='async' className='rounded-md' />
+                                <img src={`${lastSong?.album.images[0].url}`} alt="spotify-song-image" width={96} height={96} loading='eager' decoding='async' className='min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 rounded-md' />
                                 <div className="ml-4 w-full">
                                     <div className="flex flex-col mb-1">
                                         <h1 className="text-2xl font-['Geist-Bold'] text-[hsl(var(--text-primary))]">{lastSong?.name}</h1>
