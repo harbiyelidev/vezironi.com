@@ -1,35 +1,42 @@
 'use client';
 import axios from "axios";
+import { config } from "../config";
 
 export default async function SpotifyAPI() {
-  const expires_in = localStorage.getItem('expires_in');
-  const currentTime = Date.now();
+    const URL = `${config.apiUrl}/refresh`;
 
-  if (expires_in && currentTime < parseInt(expires_in)) {
-    const access_token = localStorage.getItem('access_token');
-    if (access_token) {
-      return {
-        access_token: access_token,
-        status: 200
-      };
+    const expiresIn = localStorage.getItem("spotify_expires_in");
+    const currentTime = Date.now();
+
+    if (expiresIn && currentTime < parseInt(expiresIn)) {
+        const accessToken = localStorage.getItem("spotify_access_token");
+        return {
+            status: 200,
+            access_token: accessToken,
+        };
     }
-  }
 
-  try {
-    const response = await axios.get('https://api.vezironi.com/v1/refresh', {});
+    try {
+        const response = await axios.get(URL, {});
 
-    if (response.status == 200) {
-      const { access_token, expires_in } = response.data;
+        if (response.status == 200) {
+            const { access_token, expires_in } = response.data;
 
-      localStorage.setItem('access_token', access_token);
-      localStorage.setItem('expires_in', (Date.now() + expires_in * 1000).toString());
+            localStorage.setItem('spotify_access_token', access_token);
+            localStorage.setItem('spotify_expires_in', (Date.now() + expires_in * 1000).toString());
 
-      return response.data;
-    };
+            return response.data;
+        };
 
-    return response.data;
-  } catch (error) {
-    console.error('Token refresh failed:', error);
-    return null;
-  }
-}
+        return {
+            status: response.status,
+            message: response.data.message || 'Failed to refresh token',
+        };
+    } catch (error) {
+        console.error('Token refresh failed:', error);
+        return {
+            status: 404,
+            message: 'Token refresh failed. Please try again later.',
+        };
+    }
+};

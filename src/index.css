@@ -30,16 +30,13 @@
     font-family: "Geist-Semibold";
     src: url("/fonts/Geist-SemiBold.ttf") format("truetype");
   }
-  @font-face {
-    font-family: "Geist-Thin";
-    src: url("/fonts/Geist-Thin.ttf") format("truetype");
-  }
-    @font-face {
-    font-family: "Geist-Light";
-    src: url("/fonts/Geist-Light.ttf") format("truetype");
-  }
 }
 
 * {
   border-color: hsl(var(--border-primary));
+}
+
+body {
+  background-color: hsl(var(--bg-primary));
+  color: hsl(var(--text-foreground));
 }

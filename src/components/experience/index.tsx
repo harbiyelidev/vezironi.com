@@ -4,7 +4,7 @@ import { HiMiniUsers } from "react-icons/hi2";
 
 function Experience() {
   return (
-    <div className="grid w-full grid-cols-2 gap-4 max-md:w-full lg:grid-cols-3">
+    <section className="grid w-full grid-cols-2 gap-4 max-md:w-full lg:grid-cols-3">
         <div className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-sm max-md:h-full">
             <div className="flex flex-col items-center justify-center gap-1 p-4 md:p-6">
                 <div className="flex items-center font-['Geist-Bold']">
@@ -47,7 +47,7 @@ function Experience() {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
   );
 }
 
