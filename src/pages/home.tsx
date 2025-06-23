@@ -10,6 +10,7 @@ import Experience from '@/components/experience/index.tsx';
 import Spotify from '@/components/spotify/index.tsx';
 import Activity from '@/components/activity/index.tsx';
 import Versions from '@/components/versions/index.tsx';
+import Technologies from '@/components/technologies/index.tsx';
 
 import { useEffect, useState } from 'react';
 
@@ -40,7 +41,7 @@ const Home = () => {
                 <div className='flex items-center justify-center p-4'>
                     <div className='flex w-full justify-center gap-4 max-2xl:flex-wrap max-md:w-full'>
                         <div className='grid gap-4 grid-cols-1 h-fit max-w-[65vh]'>
-                            <Versions data={versionsData.versions} />
+                            <Technologies />
                         </div>
                         <div className='grid gap-4 grid-cols-1 h-fit max-md:w-full 2xl:h-fit'>
                             <Profile profile={profileData} />
