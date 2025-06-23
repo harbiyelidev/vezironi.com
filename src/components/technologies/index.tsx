@@ -31,9 +31,9 @@ function Technologies() {
                     '--animation-duration': '30s',
                 } as React.CSSProperties}>
                    <ul className="flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-2 animate-scroll hover:[animation-play-state:paused]">
-                        {config.languages.map((language) => (
-                            <li key={language.name} className="group relative flex cursor-pointer flex-row items-center gap-2 rounded-xl bg-[hsl(var(--bg-primary))]/90 px-5 py-2 transition hover:bg-[hsl(var(--bg-primary))]/70">
-                                <p className="font-['Geist-Bold']">{language.name}</p>
+                        {config.technologies.map((technology) => (
+                            <li key={technology.name} className="group relative flex cursor-pointer flex-row items-center gap-2 rounded-xl bg-[hsl(var(--bg-primary))]/90 px-5 py-2 transition hover:bg-[hsl(var(--bg-primary))]/70">
+                                <p className="font-['Geist-Bold']">{technology.name}</p>
                             </li>
                         ))}
                    </ul>

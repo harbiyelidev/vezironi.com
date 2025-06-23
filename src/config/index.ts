@@ -29,7 +29,7 @@ export const config: { discord: { id: string, globalName: string }, github: { us
             name: 'Vue',
         },
         {
-            name: 'Node.js',
+            name: 'NodeJS',
         },
         {
             name: 'jQuery',
@@ -37,8 +37,47 @@ export const config: { discord: { id: string, globalName: string }, github: { us
         {
             name: 'Lua',
         },
+        {
+            name: 'ExpressJS',
+        },
     ],
     technologies: [
+        {
+            name: 'TailwindCSS',
+        },
+        {
+            name: 'Yarn',
+        },
+        {
+            name: 'Bun',
+        },
+        {
+            name: 'NPM',
+        },
+        {
+            name: 'mySQL',
+        },
+        {
+            name: 'MongoDB',
+        },
+        {
+            name: 'Git',
+        },
+        {
+            name: 'GitHub',
+        },
+        {
+            name: 'Figma',
+        },
+        {
+            name: 'Vercel',
+        },
+        {
+            name: 'Netlify',
+        },
+        {
+            name: 'Postman',
+        },
     ],
     apiUrl: 'https://api.vezironi.com/v1',
 }
