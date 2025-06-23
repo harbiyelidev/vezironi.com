@@ -27,9 +27,12 @@ const App = () => {
 
     }, []);
 
-    if ((profileLoading || spotifyLoading) && !spotifyData.status) {
+    const test = false
+    if (test) {
         return <Loading />;
     };
+
+    console.log(spotifyLoading)
 
     if (profileError && spotifyData.status !== 200) {
         return <div>Error loading profile data</div>;
