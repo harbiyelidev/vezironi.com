@@ -48,7 +48,7 @@ const App = () => {
                             <Spotify token={spotifyData.access_token ?? null} />
                             <Activity profile={profileData} />
                         </div>
-                        <div className='grid gap-4 grid-cols-1 h-fit max-w-[65vh]'>
+                        <div className='grid gap-4 grid-cols-1 h-fit'>
                             <Versions data={versionsData.versions} />
                         </div>
                     </div>
