@@ -11,7 +11,7 @@ function Versions({ data }: { data: Record<string, ScriptVersion> }) {
                 </div>
                 <p className="text-sm text-[hsl(var(--text-muted-foreground))]">You can follow the versions and innovations of all fivem scripts that I have made and are active!</p>
             </div>
-            <div className='p-6 pt-0'>
+            <div className='p-6 py-0'>
                 <div className="relative grid max-h-64 overflow-y-hidden grid-cols-1 gap-3">
                     {Object.values(data).map((script, index) => (
                         <div
