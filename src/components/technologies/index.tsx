@@ -1,7 +1,5 @@
+import React from "react";
 import { VscTerminalBash } from "react-icons/vsc";
-
-import { Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { config } from "@/config";
 
@@ -15,28 +13,30 @@ function Technologies() {
                 </div>
                 <p className="text-sm text-[hsl(var(--text-muted-foreground))]"></p>
             </div>
-            <div className='p-6 py-0'>
-                <div className="relative flex items-center overflow-x-hidden">
-                    <Swiper
-                        modules={[Autoplay]}
-                        spaceBetween={10}
-                        slidesPerView={2}
-                        autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false,
-                        }}
-                        loop={true}
-                        className="h-full w-full"
-                    >
+            <div className='group mx-auto mb-4 max-w-[50vh items-center justify-center p-0'>
+                <div className="scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]" style={{
+                    '--animation-direction': 'reverse',
+                    '--animation-duration': '30s',
+                } as React.CSSProperties}>
+                   <ul className="flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-2 animate-scroll hover:[animation-play-state:paused]">
                         {config.languages.map((language) => (
-                            <SwiperSlide key={language.name} className="flex items-center justify-center">
-                                <div className="relative flex cursor-pointer flex-row items-center gap-2 rounded-xl bg-[hsl(var(--bg-primary))]/90 px-5 py-3 transition duration-300 hover:bg-[hsl(var(--bg-primary))]">
-                                    <img src={`/icons/${language.icon}.svg`} alt={language.name} className="h-10 w-10" />
-                                    <p className="text-sm font-['Geist-Semibold'] text-[hsl(var(--text-primary))]">{language.name}</p>
-                                </div>
-                            </SwiperSlide>
+                            <li key={language.name} className="group relative flex cursor-pointer flex-row items-center gap-2 rounded-xl bg-[hsl(var(--bg-primary))]/90 px-5 py-2 transition hover:bg-[hsl(var(--bg-primary))]/70">
+                                <p className="font-['Geist-Bold']">{language.name}</p>
+                            </li>
                         ))}
-                    </Swiper>
+                   </ul>
+                </div>
+                <div className="scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]" style={{
+                    '--animation-direction': 'forwards',
+                    '--animation-duration': '30s',
+                } as React.CSSProperties}>
+                   <ul className="flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-2 animate-scroll hover:[animation-play-state:paused]">
+                        {config.languages.map((language) => (
+                            <li key={language.name} className="group relative flex cursor-pointer flex-row items-center gap-2 rounded-xl bg-[hsl(var(--bg-primary))]/90 px-5 py-2 transition hover:bg-[hsl(var(--bg-primary))]/70">
+                                <p className="font-['Geist-Bold']">{language.name}</p>
+                            </li>
+                        ))}
+                   </ul>
                 </div>
             </div>
         </div>
