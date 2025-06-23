@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import mdx from "vite-plugin-mdx";
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path'
@@ -12,6 +13,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    mdx()
   ],
   resolve: {
     alias: {
