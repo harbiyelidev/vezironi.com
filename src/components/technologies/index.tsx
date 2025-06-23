@@ -16,7 +16,7 @@ function Technologies() {
                 <p className="text-sm text-[hsl(var(--text-muted-foreground))]"></p>
             </div>
             <div className='p-6 py-0'>
-                <div className="relative grid max-h-64 overflow-y-hidden grid-cols-1 gap-3">
+                <div className="relative flex items-center overflow-x-hidden">
                     <Swiper
                         modules={[Autoplay]}
                         spaceBetween={10}
