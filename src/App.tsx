@@ -29,6 +29,10 @@ const App = () => {
 
     return <Loading />;
 
+    if (spotifyLoading) {
+        return <Loading />;
+    };
+
     if (profileError && spotifyData.status !== 200) {
         return <div>Error loading profile data</div>;
     };
