@@ -1,7 +1,5 @@
-export interface Data {
+export interface ScriptVersion {
     name: string;
     version: string;
     news: string[];
 }
-
-export type ScriptVersion = Data[];
