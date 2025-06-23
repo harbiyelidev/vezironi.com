@@ -6,15 +6,13 @@ function Versions({ data }: { data: Record<string, ScriptVersion> }) {
         <div className='rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-sm'>
             <div className='flex flex-col space-y-1.5 p-6'>
                 <div className='flex flex-row items-center gap-1'>
-                    <GoVersions className="text-2xl font-['Geist-SemiBold'] leading-none tracking-tight" />
+                    <GoVersions className="text-2xl font-['Geist-SemiBold'] leading-none tracking-tight text-[hsl(var(--text-primary))]" />
                     <p className="text-2xl font-['Geist-SemiBold'] leading-none tracking-tight">Script Versions</p>
                 </div>
-                <p className="text-sm text-[hsl(var(--text-foreground))]">
-                    You can follow the versions and innovations of all fivem scripts that I have made and are active!
-                </p>
+                <p className="text-sm text-[hsl(var(--text-muted-foreground))]">You can follow the versions and innovations of all fivem scripts that I have made and are active!</p>
             </div>
-            <div className='p-6'>
-                <div className="relative grid max-h-[70vh] overflow-y-auto grid-cols-1 gap-3">
+            <div className='p-6 pt-0'>
+                <div className="relative grid max-h-64 overflow-y-auto grid-cols-1 gap-3">
                     {Object.values(data).map((script, index) => (
                         <div
                             key={index}
