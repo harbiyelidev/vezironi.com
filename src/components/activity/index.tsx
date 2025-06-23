@@ -1,5 +1,5 @@
 import { Tooltip } from 'react-tooltip'
-import type { ProfileData } from '@/models/discordProfile.ts'
+import type { ProfileData } from '@/types/discordProfile'
 
 function ExternalImage(rawUrl?: string): string {
     const matchedUrl = rawUrl?.match(/https\/.+/);

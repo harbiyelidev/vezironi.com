@@ -1,5 +1,5 @@
 import { GoVersions } from "react-icons/go";
-import type { ScriptVersion } from '@/models/scriptVersion';
+import type { ScriptVersion } from '@/types/scriptVersion';
 
 function Versions({ data }: { data: Record<string, ScriptVersion> }) {
     return (

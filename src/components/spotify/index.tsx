@@ -1,6 +1,6 @@
 import useSpotifyService from "@/services/spotifyService";
 
-import type { CurrentSong, LastSong, Artist } from "@/models/spotifyData";
+import type { CurrentSong, LastSong, Artist } from "@/types/spotifyData";
 
 function Spotify({ token }: { token: string | null }) {
     if (!token) {
