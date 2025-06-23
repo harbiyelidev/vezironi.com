@@ -29,7 +29,7 @@ function Spotify({ token }: { token: string | null }) {
     }
 
     const isCurrentSong = (song: CurrentSong | LastSong): song is CurrentSong => {
-        return song.is_playing;
+        return (song as CurrentSong).is_playing !== undefined && (song as CurrentSong).item !== undefined;
     };
 
     const progressPercentage = () => {
