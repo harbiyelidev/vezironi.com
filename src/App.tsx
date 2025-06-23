@@ -39,7 +39,9 @@ const App = () => {
             <div className="relative overflow-hidden">
                 <div className='flex items-center justify-center p-4'>
                     <div className='flex w-full justify-center gap-4 max-2xl:flex-wrap max-md:w-full'>
-                        <div className='grid gap-4 grid-cols-1 h-fit'></div>
+                        <div className='grid gap-4 grid-cols-1 h-fit'>
+                            <Versions data={versionsData.versions} />
+                        </div>
                         <div className='grid gap-4 grid-cols-1 h-fit max-md:w-full 2xl:h-fit'>
                             <Profile profile={profileData} />
                             <Experience />
