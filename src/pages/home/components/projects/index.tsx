@@ -23,7 +23,7 @@ function Projects() {
                                     <p className="text-gray-500 text-sm font-['Geist-Regular']">{date}</p>
                                 </div>
                             </div>
-                            <a href={url} target="_blank" className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all bg-[hsl(var(--text-primary))] hover:bg-[hsl(var(--text-primary))]/90 h-7 px-4 w-full gap-2 mt-2">
+                            <a href={url} target="_blank" className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all bg-[hsl(var(--text-primary))] hover:bg-[hsl(var(--text-primary))]/90 h-8 px-4 w-full gap-2 mt-2">
                                 <p className="text-sm font-['Geist-Medium'] text-[hsl(var(--bg-primary))]">Buy Now!</p>
                             </a>
                         </div>
