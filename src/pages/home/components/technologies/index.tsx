@@ -13,7 +13,7 @@ function Technologies() {
                 </div>
                 <p className="text-sm text-[hsl(var(--text-muted-foreground))]"></p>
             </div>
-            <div className='group mx-auto mb-4 max-w-[24.348958333333332vw] items-center justify-center p-0'>
+            <div className='group mx-auto mb-4 max-w-full items-center justify-center p-0'>
                 <div className="scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]" style={{
                     '--animation-direction': 'reverse',
                     '--animation-duration': '30s',
