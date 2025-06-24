@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { posts } from "@/posts";
 
 export default function BlogList() {
