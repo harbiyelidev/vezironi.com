@@ -21,11 +21,11 @@ function Projects() {
                                 <p className="text-white/70 text-base mb-1 font-['Geist-Regular']">{description}</p>
                                 <p className="text-gray-500 text-sm font-['Geist-Regular']">{date}</p>
                             </div>
-                            <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all bg-[hsl(var(--text-primary))] hover:bg-[hsl(var(--text-primary))]/90 h-7 px-4 w-full gap-2">
+                            <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all bg-[hsl(var(--text-primary))] hover:bg-[hsl(var(--text-primary))]/90 h-7 px-4 w-full gap-2 mt-2">
                                 <a href={url} target="_blank" className="text-sm font-['Geist-Medium'] text-[hsl(var(--bg-primary))]">Buy Now!</a>
                             </div>
                         </div>
-                    ))}
+                    )).slice(0, 4)}
                     <div className="absolute inset-x-0 bottom-0 z-50 h-52 w-full bg-gradient-to-b from-transparent to-[#151515]"></div>
                     <div className="absolute inset-x-0 bottom-5 z-50 flex items-center justify-center">
                         <a href="/projects" className="inline-flex items-center justify-center whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--text-primary))] hover:bg-[hsl(var(--text-primary))]/90 h-10 px-4 py-2 w-fit gap-2">
