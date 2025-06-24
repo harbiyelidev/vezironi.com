@@ -4,13 +4,13 @@ import SpotifyAPI from '@/api/spotify.ts';
 import ScriptVersionsAPI from '@/api/scriptVersions.ts';
 
 // Components
-import Loading from '@/components/loading/index.tsx';
-import Profile from '@/components/profile/index.tsx';
-import Experience from '@/components/experience/index.tsx';
-import Spotify from '@/components/spotify/index.tsx';
-import Activity from '@/components/activity/index.tsx';
-import Versions from '@/components/versions/index.tsx';
-import Technologies from '@/components/technologies/index.tsx';
+import Loading from '@/components/loading';
+import Profile from './components/profile';
+import Experience from './components/experience';
+import Spotify from './components/spotify';
+import Activity from './components/activity';
+import Versions from './components/versions';
+import Technologies from './components/technologies';
 
 import { useEffect, useState } from 'react';
 
@@ -59,4 +59,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;

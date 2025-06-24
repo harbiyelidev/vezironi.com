@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { posts } from "../../posts";
+import { posts } from "@/posts";
 
-export default function BlogPost() {
+const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
     const post = posts.find(p => p.meta.slug === slug);
 
@@ -13,8 +13,10 @@ export default function BlogPost() {
             <h1 className="text-3xl font-bold mb-2">{post.meta.title}</h1>
             <p className="text-sm text-gray-500 mb-6">{post.meta.date}</p>
             <div className="prose">
-            <Component />
+                <Component />
             </div>
         </div>
     );
 }
+
+export default BlogPost;

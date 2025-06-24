@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home";
 import Versions from "./pages/versions";
-import BlogList from "./pages/blog/BlogList";
-import BlogPost from "./pages/blog/BlogPost";
+import BlogList from "./pages/blog/blogList";
+import BlogPost from "./pages/blog/blogPost";
 
 export default function App() {
   return (
