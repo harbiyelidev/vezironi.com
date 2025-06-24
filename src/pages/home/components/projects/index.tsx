@@ -14,7 +14,7 @@ function Projects() {
             <div className='p-6 py-0'>
                 <div className="relative grid max-h-80 grid-cols-1 gap-3 overflow-hidden md:grid-cols-2">
                     {config.projects.map(({ name, description, date, image, url }) => (
-                        <div key={name} className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-sm relative h-full p-3">
+                        <div key={name} className="rounded-sm border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-sm relative h-full p-3">
                             <img src={image} alt={name} className="w-full h-auto object-cover rounded-md " />
                             <div className="mt-1.5">
                                 <a href={url} target="_blank" className="text-base text-[hsl(var(--text-primary))] hover:underline font-['Geist-SemiBold']">{name}</a>
