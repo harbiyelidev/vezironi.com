@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import mdx from '@mdx-js/rollup';
 import tailwindcss from '@tailwindcss/vite'
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path'
 
@@ -13,7 +15,14 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    mdx()
+    mdx({
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypeAutolinkHeadings, {
+          behavior: "wrap"
+        }]
+      ],
+    }),
   ],
   resolve: {
     alias: {
