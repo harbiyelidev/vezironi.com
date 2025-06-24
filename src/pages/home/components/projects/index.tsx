@@ -21,9 +21,9 @@ function Projects() {
                                 <p className="text-white/70 text-base mb-1 font-['Geist-Regular']">{description}</p>
                                 <p className="text-gray-500 text-sm font-['Geist-Regular']">{date}</p>
                             </div>
-                            <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all bg-[hsl(var(--text-primary))] hover:bg-[hsl(var(--text-primary))]/90 h-7 px-4 w-full gap-2 mt-2">
-                                <a href={url} target="_blank" className="text-sm font-['Geist-Medium'] text-[hsl(var(--bg-primary))]">Buy Now!</a>
-                            </div>
+                            <a href={url} target="_blank" className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all bg-[hsl(var(--text-primary))] hover:bg-[hsl(var(--text-primary))]/90 h-7 px-4 w-full gap-2 mt-2">
+                                <p className="text-sm font-['Geist-Medium'] text-[hsl(var(--bg-primary))]">Buy Now!</p>
+                            </a>
                         </div>
                     )).slice(0, 4)}
                     <div className="absolute inset-x-0 bottom-0 z-50 h-52 w-full bg-gradient-to-b from-transparent to-[#151515]"></div>
