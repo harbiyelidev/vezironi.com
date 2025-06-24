@@ -12,15 +12,13 @@ export default function BlogPost() {
   const Component = post.default;
 
   return (
-    <div className="flex max-w-7xl mx-auto p-4">
-      {/* İçerik */}
+    <div className="flex items-start justify-between max-w-10/12 mx-auto p-4">
       <div className="prose prose-neutral dark:prose-invert max-w-3xl w-full">
         <h1 className="mb-2">{post.meta.title}</h1>
         <p className="text-sm text-gray-500 mb-6">{post.meta.date}</p>
         <Component />
       </div>
 
-      {/* Sağ TOC */}
       <aside className="w-64 hidden lg:block ml-10">
         <div className="sticky top-20">
           <h2 className="text-sm font-semibold text-gray-500 mb-2">
