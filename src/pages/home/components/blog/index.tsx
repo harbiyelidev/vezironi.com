@@ -17,7 +17,7 @@ function BlogList() {
                         <div key={meta.slug} className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-sm relative h-full p-1.5">
                             <img src={meta.image} alt={meta.title} className="w-full h-auto object-cover rounded-md" />
                             <div className="mt-1.5">
-                                <a href={`/blog/${meta.slug}`} className="text-xl text-[hsl(var(--text-primary))] hover:underline">{meta.title}</a>
+                                <a href={`/blog/${meta.slug}`} className="text-base text-[hsl(var(--text-primary))] hover:underline font-['Geist-SemiBold']">{meta.title}</a>
                                 <p className="text-gray-500 text-sm">{meta.date}</p>
                             </div>
                         </div>
