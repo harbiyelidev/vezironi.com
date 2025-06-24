@@ -21,7 +21,7 @@ function Projects() {
                                 <p className="text-white/70 text-base mb-1 font-['Geist-Regular']">{description}</p>
                                 <p className="text-gray-500 text-sm font-['Geist-Regular']">{date}</p>
                             </div>
-                            <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-['Geist-Medium'] ring-offset-[hsl(var(--text-primary))] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[hsl(var(--text-primary))] text-[hsl(var(--bg-primary))] hover:bg-[hsl(var(--text-primary))]/90 h-10 px-4 py-2 w-full gap-2">
+                            <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all bg-[hsl(var(--text-primary))] hover:bg-[hsl(var(--text-primary))]/90 h-7 px-4 w-full gap-2">
                                 <a href={url} target="_blank" className="text-sm font-['Geist-Medium'] text-[hsl(var(--bg-primary))]">Buy Now!</a>
                             </div>
                         </div>
