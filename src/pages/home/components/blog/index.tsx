@@ -9,7 +9,7 @@ function BlogList() {
                     <IoDocumentText className="text-2xl font-['Geist-SemiBold'] leading-none tracking-tight text-[hsl(var(--text-primary))]" />
                     <p className="text-2xl font-['Geist-SemiBold'] leading-none tracking-tight">Blogs</p>
                 </div>
-                <p className="text-sm text-[hsl(var(--text-muted-foreground))]">You can find all my blog posts here.</p>
+                <p className="text-sm text-[hsl(var(--text-muted-foreground))] font-['Geist-Regular']">You can find all my blog posts here.</p>
             </div>
             <div className='p-6 py-0'>
                 <div className="relative grid max-h-80 grid-cols-1 gap-3 overflow-hidden md:grid-cols-2">
