@@ -18,8 +18,8 @@ import { useEffect, useState } from 'react';
 
 const Home = () => {
     const { profileData, profileLoading, profileError } = DiscordProfile();
-    const [spotifyData, setSpotifyData] = useState<{ access_token?: string; status?: number }>({});
-    const [spotifyLoading, setSpotifyLoading] = useState(true);
+    const [ spotifyData, setSpotifyData ] = useState<{ access_token?: string; status?: number }>({});
+    const  [spotifyLoading, setSpotifyLoading ] = useState(true);
     const { versionsData, versionsLoading, versionsError } = ScriptVersionsAPI();
 
     useEffect(() => {
