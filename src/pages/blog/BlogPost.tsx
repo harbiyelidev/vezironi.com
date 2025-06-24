@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { posts } from "@/posts";
 
-const BlogPost = () => {
+export default function BlogPost() {
     const { slug } = useParams<{ slug: string }>();
     const post = posts.find(p => p.meta.slug === slug);
 
@@ -18,5 +18,3 @@ const BlogPost = () => {
         </div>
     );
 }
-
-export default BlogPost;

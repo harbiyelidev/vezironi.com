@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { posts } from "@/posts";
 
-const BlogList = () => {
+export default function BlogList() {
     return (
         <div className="max-w-3xl mx-auto p-4">
             <h1 className="text-3xl font-bold mb-6">Blog</h1>
@@ -16,5 +16,3 @@ const BlogList = () => {
         </div>
     );
 }
-
-export default BlogList;
