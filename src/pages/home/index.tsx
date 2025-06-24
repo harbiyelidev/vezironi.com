@@ -11,6 +11,7 @@ import Spotify from './components/spotify';
 import Activity from './components/activity';
 import Versions from './components/versions';
 import Technologies from './components/technologies';
+import BlogList from './components/blog';
 
 import { useEffect, useState } from 'react';
 
@@ -51,6 +52,7 @@ const Home = () => {
                         </div>
                         <div className='grid gap-4 grid-cols-1 h-fit max-w-[65vh]'>
                             <Versions data={versionsData.versions} />
+                            <BlogList />
                         </div>
                     </div>
                 </div>
