@@ -9,6 +9,8 @@ export default function BlogPost() {
   const post = posts.find((p) => p.meta.slug === slug);
   const headings = useHeadings();
 
+  console.log("Headings:", headings);
+
   if (!post) return <div className="p-4 text-center">Yazı bulunamadı</div>;
 
   const Component = post.default;
