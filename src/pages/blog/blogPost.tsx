@@ -19,6 +19,7 @@ export default function BlogPost() {
     return (
         <div className="flex items-start justify-between max-w-10/12 mx-auto p-4">
             <div className="prose prose-neutral dark:prose-invert max-w-6xl w-full">
+                <img src={post.meta.image} alt={post.meta.title} className="mb-4 w-full h-44 rounded-lg" />
                 <h1 className="mb-2 blog-title">{post.meta.title}</h1>
                 <p className="text-sm text-gray-500 mb-6">{post.meta.date}</p>
                 <Component />
