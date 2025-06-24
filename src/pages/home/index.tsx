@@ -12,6 +12,7 @@ import Activity from './components/activity';
 import Versions from './components/versions';
 import Technologies from './components/technologies';
 import BlogList from './components/blog';
+import Projects from './components/projects';
 
 import { useEffect, useState } from 'react';
 
@@ -43,6 +44,7 @@ const Home = () => {
                     <div className='flex w-full justify-center gap-4 max-2xl:flex-wrap max-md:w-full'>
                         <div className='grid gap-4 grid-cols-1 h-fit max-w-[35.0625rem]'>
                             <Technologies />
+                            <Projects />
                         </div>
                         <div className='grid gap-4 grid-cols-1 h-fit max-md:w-full 2xl:h-fit'>
                             <Profile profile={profileData} />
