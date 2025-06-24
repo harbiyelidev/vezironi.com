@@ -41,7 +41,7 @@ const Home = () => {
             <div className="relative overflow-hidden">
                 <div className='flex items-center justify-center p-4'>
                     <div className='flex w-full justify-center gap-4 max-2xl:flex-wrap max-md:w-full'>
-                        <div className='grid gap-4 grid-cols-1 h-fit max-w-screen-md'>
+                        <div className='grid gap-4 grid-cols-1 h-fit max-w-[35.0625rem]'>
                             <Technologies />
                         </div>
                         <div className='grid gap-4 grid-cols-1 h-fit max-md:w-full 2xl:h-fit'>
@@ -50,7 +50,7 @@ const Home = () => {
                             <Spotify token={spotifyData.access_token ?? null} />
                             <Activity profile={profileData} />
                         </div>
-                        <div className='grid gap-4 grid-cols-1 h-fit max-w-screen-md'>
+                        <div className='grid gap-4 grid-cols-1 h-fit max-w-[35.0625rem]'>
                             <Versions data={versionsData.versions} />
                             <BlogList />
                         </div>
