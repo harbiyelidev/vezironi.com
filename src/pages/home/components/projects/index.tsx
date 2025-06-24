@@ -1,15 +1,14 @@
 import { config } from "@/config";
-import { IoDocumentText } from "react-icons/io5";
 
 function Projects() {
     return (
         <div className='rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-sm'>
             <div className='flex flex-col space-y-1.5 p-6'>
                 <div className='flex flex-row items-center gap-1'>
-                    <IoDocumentText className="text-2xl font-['Geist-SemiBold'] leading-none tracking-tight text-[hsl(var(--text-primary))]" />
-                    <p className="text-2xl font-['Geist-SemiBold'] leading-none tracking-tight">Blogs</p>
+                    <i className="fa-regular fa-book-bookmark text-2xl font-['Geist-SemiBold'] leading-none tracking-tight text-[hsl(var(--text-primary))]"></i>
+                    <p className="text-2xl font-['Geist-SemiBold'] leading-none tracking-tight">Projects</p>
                 </div>
-                <p className="text-sm text-[hsl(var(--text-muted-foreground))]">You can find all my blog posts here.</p>
+                <p className="text-sm text-[hsl(var(--text-muted-foreground))]">You can find all my projects here.</p>
             </div>
             <div className='p-6 py-0'>
                 <div className="relative grid max-h-80 grid-cols-1 gap-3 overflow-hidden md:grid-cols-2">
