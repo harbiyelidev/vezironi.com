@@ -18,15 +18,6 @@ h3:hover a {
     text-decoration: underline;
 }
 
-h1::before,
-h2::before,
-h3::before {
-    content: "#";
-    position: absolute;
-    left: -1.5rem;
-    color: #888;
-}
-
 h1:hover::before,
 h2:hover::before,
 h3:hover::before {
@@ -34,17 +25,20 @@ h3:hover::before {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
     font-family: "Geist-Bold";
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-family: "Geist-Semibold";
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
     font-family: "Geist-Medium";
 }
 
@@ -105,4 +99,9 @@ img {
     height: auto;
     border-radius: 8px;
     margin: 1.5rem 0;
+}
+
+.blog-title {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
 }

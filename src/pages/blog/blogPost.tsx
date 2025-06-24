@@ -23,9 +23,9 @@ export default function BlogPost() {
 
       <aside className="w-max hidden lg:block ml-10">
         <div className="sticky top-20">
-          <h2 className="text-sm font-semibold text-gray-500 mb-2">
+          <p className="!text-sm font-['Geist-Regular'] !text-gray-500 !mb-2">
             Başlıklar
-          </h2>
+          </p>
           <ul className="space-y-1 text-sm text-gray-300">
             {headings.map((h) => (
               <li key={h.id} className={`ml-${(h.level - 1) * 2}`}>
