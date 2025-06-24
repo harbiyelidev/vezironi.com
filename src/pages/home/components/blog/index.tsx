@@ -12,9 +12,9 @@ function BlogList() {
                 <p className="text-sm text-[hsl(var(--text-muted-foreground))]">You can find all my blog posts here.</p>
             </div>
             <div className='p-6 py-0'>
-                <div className="relative grid max-h-64 grid-cols-1 gap-3 overflow-hidden md:grid-cols-2">
+                <div className="relative grid max-h-80 grid-cols-1 gap-3 overflow-hidden md:grid-cols-2">
                     {posts.map(({ meta }) => (
-                        <div key={meta.slug} className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-sm relative h-full p-1.5">
+                        <div key={meta.slug} className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-sm relative h-full p-3">
                             <img src={meta.image} alt={meta.title} className="w-full h-auto object-cover rounded-md" />
                             <div className="mt-1.5">
                                 <a href={`/blog/${meta.slug}`} className="text-base text-[hsl(var(--text-primary))] hover:underline font-['Geist-SemiBold']">{meta.title}</a>
