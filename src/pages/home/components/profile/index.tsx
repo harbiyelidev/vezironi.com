@@ -30,7 +30,7 @@ function Profile({ profile }: { profile: ProfileData | null }) {
             </div>
           </div>
         </div>
-        <div className="mt-5 flex max-w-[65.43075245365321vh] flex-wrap gap-2 rounded-xl bg-[hsl(var(--bg-primary))] p-3">
+        <div className="mt-5 flex max-w-[31.863413304252997vw] flex-wrap gap-2 rounded-xl bg-[hsl(var(--bg-primary))] p-3">
           <div className="flex flex-row items-center gap-1 rounded-md bg-[hsl(var(--bg-secondary))]/60 py-1 pl-3 pr-4 transition duration-300 max-md:grow">
             <TbLanguage className='text-[hsl(var(--text-primary))]' />
             <p className="text-sm font-['Geist-Semibold'] text-gray-400">Turkish & English</p>
