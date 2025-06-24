@@ -14,7 +14,7 @@ export default function BlogPost() {
     const Component = post.default;
 
     return (
-        <div className="flex items-start justify-between max-w-10/12 mx-auto p-4">
+        <div className="blog flex items-start justify-between max-w-10/12 mx-auto p-4">
             <div className="prose prose-neutral dark:prose-invert max-w-6xl w-full">
                 <img src={post.meta.image} alt={post.meta.title} className={clsx(styles.blogImage, "mb-4")} />
                 <h1 className={clsx(styles.blogTitle, "mb-2")}>{post.meta.title}</h1>
