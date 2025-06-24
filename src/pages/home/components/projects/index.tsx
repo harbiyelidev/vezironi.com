@@ -18,8 +18,8 @@ function Projects() {
                             <img src={image} alt={name} className="w-full h-auto object-cover rounded-md" />
                             <div className="mt-1.5">
                                 <a href={url} className="text-base text-[hsl(var(--text-primary))] hover:underline font-['Geist-SemiBold']">{name}</a>
-                                <p className="text-white/70 text-base mb-1">{description}</p>
-                                <p className="text-gray-500 text-sm">{date}</p>
+                                <p className="text-white/70 text-base mb-1 font-['Geist-Regular']">{description}</p>
+                                <p className="text-gray-500 text-sm font-['Geist-Regular']">{date}</p>
                             </div>
                         </div>
                     ))}

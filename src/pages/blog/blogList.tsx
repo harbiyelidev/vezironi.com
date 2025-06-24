@@ -10,7 +10,7 @@ export default function BlogList() {
                         <img src={meta.image} alt={meta.title} className="w-full h-auto object-cover rounded-md" />
                         <div className="mt-1.5">
                             <a href={`/blog/${meta.slug}`} className="text-base text-[hsl(var(--text-primary))] hover:underline font-['Geist-SemiBold']">{meta.title}</a>
-                            <p className="text-gray-500 text-sm">{meta.date}</p>
+                            <p className="text-gray-500 text-sm font-['Geist-Regular']">{meta.date}</p>
                         </div>
                     </div>
                 ))}
