@@ -19,7 +19,7 @@ export default function BlogPost() {
         <Component />
       </div>
 
-      <aside className="w-64 hidden lg:block ml-10">
+      <aside className="w-max hidden lg:block ml-10">
         <div className="sticky top-20">
           <h2 className="text-sm font-semibold text-gray-500 mb-2">
             Başlıklar
