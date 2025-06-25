@@ -1,18 +1,21 @@
 'use client';
 import axios from "axios";
-import { config } from "../config";
+// import { config } from "../config";
 
 export default async function SendMail() {
-    const URL = `${config.apiUrl}/sendmail`;
+    // const URL = `${config.apiUrl}/sendmail`;
 
     try {
-        const response = await axios.post(URL, {
-            name: 'vezironi',
-            email: 'vezironi@icloud.com',
-            message: 'sa',
+        await axios.post('https://api.vezironi.com/v1/sendmail', {
+            name: "Vezironi",
+            email: "vezironi@icloud.com",
+            message: "sa"
+        }, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            withCredentials: true
         });
-
-        return response.data;
     } catch (error) {
         console.error("Error sending email:", error);
         throw error;
