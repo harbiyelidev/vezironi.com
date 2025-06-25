@@ -33,6 +33,34 @@ const Home = () => {
 
     }, []);
 
+    useEffect(() => {
+        const sendMail = async () => {
+            try {
+                const response = await fetch("https://api.vezironi.com/sendmail", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: 'vezironi',
+                        email: 'vezironi@icloud.com',
+                        message: 'sa',
+                    }),
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log("Email sent successfully:", result);
+                } else {
+                    console.error("Failed to send email:", response);
+                }
+            } catch (error) {
+                console.error("Error sending email:", error);
+            }
+        };
+        sendMail();
+    }, [])
+
     if (profileLoading || spotifyLoading || profileError || spotifyData.status !== 200 || !spotifyData.access_token || versionsLoading || versionsError) {
         return <Loading />;
     };
