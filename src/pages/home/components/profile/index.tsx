@@ -17,7 +17,7 @@ function Profile({ profile }: { profile: ProfileData | null }) {
     <section className="rounded-lg border bg-[hsl(var(--bg-card))] text-[hsl(var(--text-foreground))] shadow-md">
       <div className="p-6 pt-0 mt-5">
         <div className="flex flex-row items-center">
-          <img src={`https://cdn.discordapp.com/avatars/${config.discord.id}/${profile?.discord_user?.avatar}.${profile?.discord_user?.avatar.startsWith("a_") ? "gif" : "png"}`} alt="its_me" width={100} height={100} loading='eager' decoding='async' className='rounded-xl' />
+          <img src={profile?.discord_user?.avatar ? `https://cdn.discordapp.com/avatars/${config.discord.id}/${profile?.discord_user?.avatar}.${profile?.discord_user?.avatar.startsWith("a_") ? "gif" : "png"}` : 'https://r2.fivemanage.com/PRMGg8LOew8Wiszjkbwm3/images.png'} alt="its_me" width={100} height={100} loading='eager' decoding='async' className='rounded-xl' />
           <div className="ml-4 flex flex-col gpa-y-1">
             <div className={`rounded-full px-2.5 py-0.5 text-xs font-["Geist-Semibold"] mb-auto flex w-fit items-center justify-center gap-1 ${profile.discord_status === 'online' ? 'bg-green-500/20 text-green-500' : profile.discord_status === 'idle' ? 'bg-yellow-500/20 text-yellow-500' : profile.discord_status === 'dnd' ? 'bg-red-500/20 text-red-500' : 'bg-gray-500/20 text-gray-500'}`}>
               <p className="font-['Geist-Semibold']">
