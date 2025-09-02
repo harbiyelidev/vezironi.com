@@ -99,8 +99,14 @@ function App() {
                                  <div className='grow'>
                                     <a href={lastSong?.external_urls.spotify} target="_blank" className="text-foreground hover:underline transition-colors duration-300 ease-in-out mb-1 text-lg font-medium">{lastSong?.name}</a>
                                     <p className="text-muted-foreground text-sm">{lastSong?.artists.map(artist => artist.name).join(', ')}</p>
-                                    <div className="w-full h-1.5 bg-[hsl(var(--bg-secondary))] rounded-full relative">
-                                       <div className="absolute top-0 left-0 h-full bg-[hsl(var(--text-primary))] rounded-full transition-all duration-300" style={{ width: `0%` }}></div>
+                                    <div className='flex flex-col items-center'>
+                                       <div className='flex items-center justify-between w-full mb-1'>
+                                          <p className='text-muted-foreground text-sm'>00:00</p>
+                                          <p className='text-muted-foreground text-sm'>00:00</p>
+                                       </div>
+                                       <div className="w-full h-1.5 bg-[hsl(var(--bg-secondary))] rounded-full relative">
+                                          <div className="absolute top-0 left-0 h-full bg-green-700 rounded-full transition-all duration-300" style={{ width: `0%` }}></div>
+                                       </div>
                                     </div>
                                  </div>
                               </div>
