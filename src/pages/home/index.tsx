@@ -43,7 +43,7 @@ function App() {
    let lastSong: LastSong | undefined;
 
    if (!currentSong || !currentSong.item) {
-      if ('items' in SpotifyData.data) {
+      if (SpotifyData.data && 'items' in SpotifyData.data) {
          const recentData = SpotifyData.data as { items: Array<{ track: LastSong }> };
          if (recentData.items && recentData.items.length > 0) {
             lastSong = recentData.items[0].track;
