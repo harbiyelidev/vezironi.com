@@ -19,7 +19,7 @@ import SpotifyApi from "@/api/spotify.ts";
 import useSpotifyService from "@/services/spotify.ts";
 
 import type { ProfileData } from "@/types/discordProfile";
-import type { CurrentSong, LastSong, Artist } from "@/types/spotifyData";
+import type { CurrentSong, LastSong } from "@/types/spotifyData";
 
 function App() {
    const DiscordProfile = DiscordProfileApi() as { data: ProfileData, loading: boolean, error: boolean };
@@ -43,19 +43,24 @@ function App() {
    let lastSong: LastSong | undefined;
 
    if (!currentSong || !currentSong.item) {
-      lastSong = SpotifyData.data.items[0].track as LastSong;
+      if ('items' in SpotifyData.data) {
+         const recentData = SpotifyData.data as { items: Array<{ track: LastSong }> };
+         if (recentData.items && recentData.items.length > 0) {
+            lastSong = recentData.items[0].track;
+         }
+      }
    }
 
    const isCurrentSong = (song: CurrentSong | LastSong): song is CurrentSong => {
       return (song as CurrentSong).is_playing !== undefined && (song as CurrentSong).item !== undefined;
    };
 
-   const progressPercentage = () => {
-      if (currentSong && currentSong.item) {
-         return Math.min((currentSong.progress_ms / currentSong.item.duration_ms) * 100, 100);
-      }
-      return 0;
-   };
+   // const progressPercentage = () => {
+   //    if (currentSong && currentSong.item) {
+   //       return Math.min((currentSong.progress_ms / currentSong.item.duration_ms) * 100, 100);
+   //    }
+   //    return 0;
+   // };
 
    return (
       <>
