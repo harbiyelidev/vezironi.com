@@ -20,9 +20,9 @@ export default function useSpotifyService(token: string) {
          setIsPlaying(false);
 
          const recentRes = await fetch(recentlySongURL, {
-               headers: {
-                  Authorization: `Bearer ${token}`,
-               },
+            headers: {
+               Authorization: `Bearer ${token}`,
+            },
          });
 
          if (!recentRes.ok) throw new Error("Failed to fetch recent song");

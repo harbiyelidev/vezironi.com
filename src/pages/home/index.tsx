@@ -52,15 +52,22 @@ function App() {
    }
 
    const isCurrentSong = (song: CurrentSong | LastSong): song is CurrentSong => {
-      return (song as CurrentSong).is_playing !== undefined && (song as CurrentSong).item !== undefined;
+      return (song as CurrentSong)?.is_playing !== undefined && (song as CurrentSong)?.item !== undefined;
    };
 
-   // const progressPercentage = () => {
-   //    if (currentSong && currentSong.item) {
-   //       return Math.min((currentSong.progress_ms / currentSong.item.duration_ms) * 100, 100);
-   //    }
-   //    return 0;
-   // };
+   const calculateDuration = (progress_ms: number) => {
+      const minutes = Math.floor(progress_ms / 60000);
+      const seconds = ((progress_ms % 60000) / 1000).toFixed(0);
+      return `${minutes}:${seconds.padStart(2, '0')}`;
+   };
+
+   const progressPercentage = () => {
+      if (currentSong && currentSong.item) {
+         if (currentSong.item.duration_ms === 0) return 0;
+         return Math.min((currentSong.progress_ms / currentSong.item.duration_ms) * 100, 100);
+      }
+      return 0;
+   };
 
    return (
       <>
@@ -90,7 +97,24 @@ function App() {
                      <div className="hover:bg-secondary/50 rounded-xl border p-4 transition-colors duration-300 ease-in-out">
                         {
                            isCurrentSong(currentSong) ? (
-                              <p>Text</p>
+                              <div className='transition-colors duration-300 ease-in-out flex flex-col items-end gap-4 sm:flex-row'>
+                                 <div className='w-full sm:max-w-24 sm:shrink-0'>
+                                    <img src={`${lastSong?.album.images[0].url}`} alt="spotify-song-image" width={96} height={96} loading='lazy' decoding='async' className='min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 rounded-md' draggable={false} />
+                                 </div>
+                                 <div className='grow'>
+                                    <a href={lastSong?.external_urls.spotify} target="_blank" className="text-foreground hover:underline transition-colors duration-300 ease-in-out text-lg font-medium">{lastSong?.name}</a>
+                                    <p className="text-muted-foreground text-sm">{lastSong?.artists.map(artist => artist.name).join(', ')}</p>
+                                    <div className='flex flex-col items-center mt-2'>
+                                       <div className='flex items-center justify-between w-full mb-1'>
+                                          <p className='text-muted-foreground text-sm'>{calculateDuration(currentSong.progress_ms)}</p>
+                                          <p className='text-muted-foreground text-sm'>{calculateDuration(currentSong.item.duration_ms)}</p>
+                                       </div>
+                                       <div className="w-full h-1.5 bg-secondary rounded-full relative">
+                                          <div className="absolute top-0 left-0 h-full bg-green-700 rounded-full transition-all duration-300" style={{ width: `${progressPercentage()}%` }}></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            ) : (
                               <div className='transition-colors duration-300 ease-in-out flex flex-col items-end gap-4 sm:flex-row'>
                                  <div className='w-full sm:max-w-24 sm:shrink-0'>
