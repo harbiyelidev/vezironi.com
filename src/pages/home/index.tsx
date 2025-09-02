@@ -97,9 +97,9 @@ function App() {
                                     <img src={`${lastSong?.album.images[0].url}`} alt="spotify-song-image" width={96} height={96} loading='lazy' decoding='async' className='min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 rounded-md' draggable={false} />
                                  </div>
                                  <div className='grow'>
-                                    <a href={lastSong?.external_urls.spotify} target="_blank" className="text-foreground hover:underline transition-colors duration-300 ease-in-out mb-1 text-lg font-medium">{lastSong?.name}</a>
+                                    <a href={lastSong?.external_urls.spotify} target="_blank" className="text-foreground hover:underline transition-colors duration-300 ease-in-out text-lg font-medium">{lastSong?.name}</a>
                                     <p className="text-muted-foreground text-sm">{lastSong?.artists.map(artist => artist.name).join(', ')}</p>
-                                    <div className='flex flex-col items-center'>
+                                    <div className='flex flex-col items-center mt-2'>
                                        <div className='flex items-center justify-between w-full mb-1'>
                                           <p className='text-muted-foreground text-sm'>00:00</p>
                                           <p className='text-muted-foreground text-sm'>00:00</p>
