@@ -97,7 +97,7 @@ function App() {
                      <div className="hover:bg-secondary/50 rounded-xl border p-4 transition-colors duration-300 ease-in-out">
                         {
                            isCurrentSong(currentSong) ? (
-                              <div className='transition-colors duration-300 ease-in-out flex flex-col items-end gap-4 sm:flex-row'>
+                              <div className='transition-colors duration-300 ease-in-out flex items-end gap-4 sm:flex-row'>
                                  <div className='w-full sm:max-w-24 sm:shrink-0'>
                                     <img src={`${currentSong?.item.album.images[0].url}`} alt="spotify-song-image" width={96} height={96} loading='lazy' decoding='async' className='min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 rounded-md' draggable={false} />
                                  </div>
@@ -116,7 +116,7 @@ function App() {
                                  </div>
                               </div>
                            ) : (
-                              <div className='transition-colors duration-300 ease-in-out flex flex-col items-end gap-4 sm:flex-row'>
+                              <div className='transition-colors duration-300 ease-in-out flex items-end gap-4 sm:flex-row'>
                                  <div className='w-full sm:max-w-24 sm:shrink-0'>
                                     <img src={`${lastSong?.album.images[0].url}`} alt="spotify-song-image" width={96} height={96} loading='lazy' decoding='async' className='min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 rounded-md' draggable={false} />
                                  </div>
