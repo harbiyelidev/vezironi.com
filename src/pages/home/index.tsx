@@ -92,7 +92,7 @@ function App() {
                            isCurrentSong(currentSong) ? (
                               <p>Text</p>
                            ) : (
-                              <div className='transition-colors duration-300 ease-in-out flex flex-col gap-4 sm:flex-row'>
+                              <div className='transition-colors duration-300 ease-in-out flex flex-col items-end gap-4 sm:flex-row'>
                                  <div className='w-full sm:max-w-24 sm:shrink-0'>
                                     <img src={`${lastSong?.album.images[0].url}`} alt="spotify-song-image" width={96} height={96} loading='lazy' decoding='async' className='min-w-24 min-h-24 w-24 h-24 max-w-24 max-h-24 rounded-md' draggable={false} />
                                  </div>
@@ -104,7 +104,7 @@ function App() {
                                           <p className='text-muted-foreground text-sm'>00:00</p>
                                           <p className='text-muted-foreground text-sm'>00:00</p>
                                        </div>
-                                       <div className="w-full h-1.5 bg-[hsl(var(--bg-secondary))] rounded-full relative">
+                                       <div className="w-full h-1.5 bg-secondary rounded-full relative">
                                           <div className="absolute top-0 left-0 h-full bg-green-700 rounded-full transition-all duration-300" style={{ width: `0%` }}></div>
                                        </div>
                                     </div>
